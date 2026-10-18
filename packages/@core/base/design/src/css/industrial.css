@@ -1,0 +1,62 @@
+/* Industrial control-room theme for the light workspace. */
+html:not(.dark) {
+  --font-family:
+    'Inter', 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', arial, sans-serif;
+  --background: 0 0% 100%;
+  --background-deep: 210 8% 96%;
+  --foreground: 210 7% 23%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 7% 23%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 7% 23%;
+  --muted: 210 8% 94%;
+  --muted-foreground: 210 5% 45%;
+  --secondary: 210 8% 94%;
+  --secondary-foreground: 210 7% 23%;
+  --accent: 210 8% 93%;
+  --accent-dark: 210 8% 88%;
+  --accent-darker: 210 8% 85%;
+  --accent-lighter: 210 8% 98%;
+  --accent-hover: 210 8% 91%;
+  --accent-foreground: 210 7% 23%;
+  --heavy: 210 8% 87%;
+  --heavy-foreground: var(--accent-foreground);
+  --border: 210 8% 84%;
+  --input: 210 8% 84%;
+  --input-placeholder: 210 6% 55%;
+  --input-background: 0 0% 100%;
+  --ring: 139 38% 41%;
+  --sidebar: 150 4% 22%;
+  --sidebar-deep: 150 4% 19%;
+  --menu: var(--sidebar);
+  --header: var(--primary);
+
+  color-scheme: light;
+}
+
+/* Keep the dark navigation readable while the work area stays light. */
+html:not(.dark) [data-layout-region='sidebar'].dark,
+html:not(.dark) [data-layout-region='header'] .dark {
+  --foreground: 0 0% 96%;
+  --accent: 0 0% 100% / 12%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 100% / 16%;
+}
+
+html:not(.dark) :is(.vben-menu.is-dark, .vben-menu__popup-container.is-dark) {
+  --menu-item-color: hsl(0deg 0% 88%);
+  --menu-item-hover-color: hsl(0deg 0% 100%);
+  --menu-item-hover-background-color: hsl(0deg 0% 100% / 10%);
+  --menu-item-active-color: hsl(0deg 0% 100%);
+  --menu-item-active-background-color: hsl(var(--primary));
+  --menu-submenu-hover-color: hsl(0deg 0% 100%);
+  --menu-submenu-hover-background-color: hsl(0deg 0% 100% / 10%);
+  --menu-submenu-active-color: hsl(0deg 0% 100%);
+  --menu-submenu-active-background-color: hsl(var(--primary) / 18%);
+}
+
+html:not(.dark) :is(.ant-card, .n-card, .el-card, .t-card) {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: none;
+}
