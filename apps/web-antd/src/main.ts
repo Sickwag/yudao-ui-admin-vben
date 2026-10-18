@@ -13,10 +13,14 @@ async function initApplication() {
   const appVersion = import.meta.env.VITE_APP_VERSION;
   const namespace = `${import.meta.env.VITE_APP_NAMESPACE}-${appVersion}-${env}`;
 
+  // 视觉改版：隔离偏好缓存，避免旧版本的深色 / 蓝色 / 大圆角设置覆盖工业主题。
+  // 登录态、页签等 store 仍使用原 namespace，不要求用户重新登录。
+  const preferencesNamespace = `${namespace}-industrial-v1`;
+
   // app偏好设置初始化
   await initPreferences({
     extension: preferencesExtension,
-    namespace,
+    namespace: preferencesNamespace,
     overrides: overridesPreferences,
   });
 

@@ -25,7 +25,21 @@ const tokenTheme = computed(() => {
 
   return {
     algorithm,
-    token: tokens,
+    token: {
+      ...tokens,
+      borderRadius: 2,
+      borderRadiusLG: 2,
+      borderRadiusSM: 2,
+      borderRadiusXS: 2,
+      boxShadowSecondary: '0 4px 16px rgb(21 31 23 / 12%)',
+      controlHeight: 32,
+      controlHeightLG: 36,
+      controlHeightSM: 28,
+      fontFamily:
+        "'Roboto', 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif",
+      fontSize: 13,
+      wireframe: true,
+    },
   };
 });
 </script>

@@ -1,0 +1,383 @@
+/**
+ * Data-heavy working surfaces: VXE Grid, page frames and dashboards.
+ */
+
+/* Generic bordered panel used across dashboard and workbench widgets */
+body .card-box {
+  background: var(--ind-surface);
+  border: 1px solid var(--ind-border);
+  border-radius: var(--ind-radius);
+  box-shadow: none;
+}
+
+body .card-box:hover {
+  border-color: var(--ind-border-strong);
+}
+
+/* Page frame --------------------------------------------------------------- */
+
+body [data-layout-region='page-content'] {
+  gap: 12px;
+}
+
+body [data-layout-region='page-content'] > .flex,
+body [data-layout-region='page-content'] > .grid {
+  gap: 12px;
+}
+
+body [data-layout-region='page-content'] > .ant-card,
+body [data-layout-region='page-content'] > .vxe-grid {
+  box-shadow: none;
+}
+
+/* Keep the documentation strip quiet and aligned to the same rail. */
+body [data-layout-region='page-content'] .ant-alert {
+  border-radius: var(--ind-radius);
+}
+
+body [data-layout-region='page-content'] .DocAlert,
+body [data-layout-region='page-content'] .doc-alert {
+  border-color: var(--ind-border);
+}
+
+/* VXE Grid ---------------------------------------------------------------- */
+
+:root body .vxe-grid {
+  --vxe-ui-font-color: var(--ind-text);
+  --vxe-ui-font-primary-color: var(--ind-green);
+  --vxe-ui-font-primary-lighten-color: var(--ind-green-hover);
+  --vxe-ui-font-primary-darken-color: var(--ind-green-strong);
+  --vxe-ui-font-disabled-color: var(--ind-text-muted);
+  --vxe-ui-layout-background-color: var(--ind-surface);
+  --vxe-ui-base-popup-border-color: var(--ind-border-strong);
+  --vxe-ui-base-popup-box-shadow: var(--ind-shadow-popup);
+  --vxe-ui-table-border-color: var(--ind-border);
+  --vxe-ui-table-header-background-color: var(--ind-surface-sunken);
+  --vxe-ui-table-header-font-color: var(--ind-text);
+  --vxe-ui-table-row-hover-background-color: var(--ind-green-tint);
+  --vxe-ui-table-row-striped-background-color: var(--ind-surface-alt);
+  --vxe-ui-table-row-hover-striped-background-color: var(--ind-green-tint);
+  --vxe-ui-table-row-checkbox-checked-background-color: var(--ind-green-soft);
+  --vxe-ui-table-row-hover-checkbox-checked-background-color: #e1eee4;
+  --vxe-ui-table-row-current-background-color: var(--ind-green-soft);
+  --vxe-ui-table-row-hover-current-background-color: var(--ind-green-tint);
+  --vxe-ui-table-resizable-line-color: var(--ind-green);
+  --vxe-ui-input-border-color: var(--ind-border-strong);
+  --vxe-ui-input-disabled-color: var(--ind-surface-sunken);
+  --vxe-ui-loading-background-color: rgb(255 255 255 / 70%);
+
+  overflow: hidden;
+  background: var(--ind-surface);
+  border: 1px solid var(--ind-border);
+  border-radius: var(--ind-radius);
+  box-shadow: none;
+}
+
+.dark body .vxe-grid {
+  --vxe-ui-loading-background-color: rgb(15 18 16 / 76%);
+  --vxe-ui-table-row-hover-checkbox-checked-background-color: #213727;
+}
+
+/* Toolbars and query forms read as one compact instrument strip. */
+body .vxe-grid--layout-header-wrapper {
+  background: var(--ind-surface-alt);
+  border-bottom: 1px solid var(--ind-border);
+}
+
+body .vxe-grid--layout-header-wrapper:empty {
+  display: none;
+}
+
+body .vxe-toolbar {
+  min-height: 39px;
+  padding: 6px 10px;
+  background: var(--ind-surface-alt);
+}
+
+body .vxe-toolbar .vxe-buttons--wrapper:not(:empty),
+body .vxe-toolbar .vxe-tools--wrapper:not(:empty),
+body .vxe-toolbar .vxe-tools--operate:not(:empty) {
+  padding: 0;
+}
+
+body .vxe-toolbar .vxe-tools--operate {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+body .vxe-toolbar .vxe-tools--operate .vxe-button,
+body .vxe-toolbar .vxe-tools--wrapper .vxe-button {
+  min-height: 27px;
+  padding: 3px 7px;
+  color: var(--ind-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--ind-radius);
+}
+
+body .vxe-toolbar .vxe-tools--operate .vxe-button:hover,
+body .vxe-toolbar .vxe-tools--wrapper .vxe-button:hover {
+  color: var(--ind-green-strong);
+  background: var(--ind-green-soft);
+  border-color: #c8ddcc;
+}
+
+body .vxe-grid--form-wrapper {
+  padding: 10px 12px 2px;
+  background: var(--ind-surface-alt);
+  border-bottom: 1px solid var(--ind-border);
+}
+
+body .vxe-grid--form-wrapper .vxe-form {
+  padding: 0;
+}
+
+body .vxe-form .vxe-form--item {
+  margin-bottom: 8px;
+}
+
+body .vxe-form .vxe-form--item-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ind-text-muted);
+}
+
+body .vxe-form .vxe-form--item-content {
+  font-size: 12.5px;
+}
+
+body .vxe-form .vxe-form--item-toolbar {
+  margin-bottom: 8px;
+}
+
+body .vxe-grid .vxe-table {
+  font-size: 12.5px;
+  background: var(--ind-surface);
+}
+
+body .vxe-grid .vxe-table--header-wrapper {
+  background: var(--ind-surface-sunken);
+}
+
+body .vxe-grid .vxe-header--column {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ind-text);
+  letter-spacing: 0.02em;
+  background: var(--ind-surface-sunken) !important;
+  border-right-color: var(--ind-border) !important;
+  border-bottom-color: var(--ind-border-strong) !important;
+}
+
+body .vxe-grid .vxe-body--column {
+  color: var(--ind-text);
+  border-bottom-color: var(--ind-border);
+}
+
+body .vxe-grid .vxe-body--row:last-child .vxe-body--column {
+  border-bottom-color: transparent;
+}
+
+body .vxe-grid .vxe-body--row.row--hover .vxe-body--column {
+  background: var(--ind-green-tint) !important;
+}
+
+body .vxe-grid .vxe-body--row.row--current .vxe-body--column {
+  background: var(--ind-green-soft) !important;
+}
+
+body .vxe-grid .vxe-body--row.row--checked .vxe-body--column {
+  background: var(--ind-green-soft) !important;
+}
+
+body .vxe-grid .vxe-cell {
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 1.45;
+}
+
+body .vxe-grid .vxe-cell--title {
+  color: var(--ind-text) !important;
+}
+
+body .vxe-grid .vxe-cell--label {
+  color: var(--ind-text-muted) !important;
+}
+
+body .vxe-grid .vxe-cell--checkbox .vxe-checkbox--icon {
+  color: var(--ind-border-strong);
+}
+
+body .vxe-grid .vxe-cell--checkbox.is--checked .vxe-checkbox--icon {
+  color: var(--ind-green);
+}
+
+body .vxe-grid .vxe-table--border-line {
+  border-color: var(--ind-border) !important;
+}
+
+body .vxe-grid .vxe-table--empty-placeholder,
+body .vxe-grid .vxe-table--empty-content {
+  color: var(--ind-text-muted);
+  background: var(--ind-surface);
+}
+
+body .vxe-grid .vxe-loading {
+  background: var(--vxe-ui-loading-background-color) !important;
+}
+
+/* Pager: small mechanical controls on a recessed strip. */
+body .vxe-pager {
+  min-height: 38px;
+  padding: 4px 10px;
+  background: var(--ind-surface-alt);
+  border-top: 1px solid var(--ind-border);
+}
+
+body .vxe-pager .vxe-pager--prev-btn,
+body .vxe-pager .vxe-pager--next-btn,
+body .vxe-pager .vxe-pager--num-btn,
+body .vxe-pager .vxe-pager--jump-prev,
+body .vxe-pager .vxe-pager--jump-next {
+  min-width: 26px;
+  height: 26px;
+  margin: 0 1px;
+  line-height: 24px;
+  color: var(--ind-text-muted);
+  border: 1px solid transparent;
+  border-radius: var(--ind-radius);
+}
+
+body .vxe-pager .vxe-pager--num-btn.is--active {
+  color: #fff;
+  background: var(--ind-green);
+  border-color: var(--ind-green);
+}
+
+body .vxe-pager .vxe-pager--num-btn:not(.is--disabled):hover,
+body .vxe-pager .vxe-pager--prev-btn:not(.is--disabled):hover,
+body .vxe-pager .vxe-pager--next-btn:not(.is--disabled):hover {
+  color: var(--ind-green-strong);
+  background: var(--ind-green-soft);
+  border-color: var(--ind-border);
+}
+
+body .vxe-pager .vxe-pager--sizes {
+  font-size: 12px;
+  color: var(--ind-text-muted);
+}
+
+body .vxe-pager .vxe-pager--sizes .vxe-input {
+  width: 48px;
+}
+
+body .vxe-pager .vxe-pager--sizes .vxe-input .vxe-input--inner {
+  height: 26px;
+  border-color: var(--ind-border-strong);
+  border-radius: var(--ind-radius);
+}
+
+body .vxe-pager .vxe-pager--count {
+  font-size: 12px;
+  color: var(--ind-text-muted);
+}
+
+body .vxe-pager .vxe-pager--jump .vxe-input {
+  height: 26px;
+}
+
+body .vxe-pager .vxe-pager--jump .vxe-input .vxe-input--inner {
+  border-radius: var(--ind-radius);
+}
+
+/* Table action links are dense and textual. */
+body .vxe-table .vxe-body--column .ant-btn-link {
+  height: auto;
+  padding: 0 2px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+body .vxe-table .vxe-cell .ant-badge-status-text {
+  color: var(--ind-text);
+}
+
+/* Small vertical rhythm in table cells with two text lines. */
+body .vxe-table .vxe-cell > div > .text-xs,
+body .vxe-table .vxe-cell > .text-xs {
+  color: var(--ind-text-muted);
+}
+
+/* Selected-row indicator rail */
+body .vxe-grid .vxe-body--row.row--checked > .vxe-body--column:first-child,
+body .vxe-grid .vxe-body--row.row--current > .vxe-body--column:first-child {
+  box-shadow: inset 2px 0 0 var(--ind-green);
+}
+
+/* Page headers (when a page chooses to use one) --------------------------- */
+
+body .ant-page-header {
+  padding: 12px 0;
+}
+
+body .ant-page-header-heading-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+body .ant-page-header-heading-sub-title {
+  font-size: 12px;
+  color: var(--ind-text-muted);
+}
+
+/* Dashboard micro layout --------------------------------------------------- */
+
+body .card-box [data-slot='card'] {
+  border: 0;
+}
+
+body .card-box [data-slot='card-header'] {
+  background: transparent;
+}
+
+body .card-box [data-slot='card-title'] {
+  font-size: 14px !important;
+}
+
+body .card-box + .card-box {
+  margin-top: 12px;
+}
+
+body .vben-tabs-list {
+  height: 32px;
+  padding: 2px;
+  background: var(--ind-surface-sunken);
+  border: 1px solid var(--ind-border);
+  border-radius: var(--ind-radius);
+}
+
+body .vben-tabs-trigger {
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--ind-text-muted);
+  border-radius: 0;
+}
+
+body .vben-tabs-trigger[data-state='active'] {
+  color: var(--ind-green-strong);
+  background: var(--ind-surface);
+  border: 1px solid var(--ind-border);
+  box-shadow: none;
+}
+
+/* Charts on dashboard */
+body .echarts,
+body .echarts-for-react {
+  font-family: var(--font-family) !important;
+}
+
+/* Industrial divider when pages separate blocks manually. */
+body [data-layout-region='page-content'] hr {
+  border-color: var(--ind-border);
+}

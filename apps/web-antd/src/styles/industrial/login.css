@@ -1,0 +1,343 @@
+/**
+ * Authentication: blueprint-style access panel.
+ */
+
+.auth-industrial {
+  color: var(--ind-text);
+  background: #171b18;
+}
+
+.auth-industrial .login-background.login-background {
+  background:
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 /
+      48px 48px,
+    radial-gradient(circle at 72% 30%, rgb(72 146 87 / 28%), transparent 42%),
+    linear-gradient(135deg, #151a16 0%, #1d261f 56%, #151a16 100%) !important;
+  filter: none !important;
+}
+
+.auth-industrial .login-background::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(100% - 1px),
+      rgb(255 255 255 / 7%) calc(100% - 1px)
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 10px,
+      rgb(72 146 87 / 7%) 10px,
+      rgb(72 146 87 / 7%) 11px
+    );
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 85%), transparent 92%);
+}
+
+.auth-industrial .login-background::after {
+  position: absolute;
+  right: 44px;
+  bottom: 36px;
+  left: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-family: 'Roboto Mono', SFMono-Regular, consolas, monospace;
+  font-size: 9px;
+  line-height: 1;
+  color: rgb(255 255 255 / 38%);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  content: 'CONTROL NODE / 01    ::    SECURE CHANNEL / TLS 1.3';
+  border-top: 1px solid rgb(255 255 255 / 14%);
+}
+
+.auth-industrial .animate-float {
+  display: none !important;
+}
+
+.auth-industrial .login-background + .mr-20 {
+  align-items: flex-start;
+  width: 72%;
+  max-width: 820px;
+  margin-right: 0;
+  margin-left: 6.5%;
+  text-align: left;
+}
+
+.auth-industrial .login-background + .mr-20::before {
+  display: block;
+  padding-top: 18px;
+  margin-bottom: 22px;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: clamp(48px, 5.5vw, 92px);
+  font-weight: 800;
+  line-height: 0.87;
+  color: rgb(255 255 255 / 8%);
+  letter-spacing: -0.055em;
+  white-space: pre;
+  content: 'INDUSTRIAL\A CONTROL';
+  border-top: 1px solid rgb(255 255 255 / 22%);
+}
+
+.auth-industrial .login-background + .mr-20 > div:first-of-type {
+  padding-left: 14px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #f1f4f0;
+  letter-spacing: 0.01em;
+  border-left: 3px solid var(--ind-green);
+}
+
+.auth-industrial .login-background + .mr-20 > div:nth-of-type(2) {
+  padding-left: 17px;
+  margin-top: 9px !important;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 55%);
+  letter-spacing: 0.03em;
+}
+
+/* Top-left brand lockup */
+.auth-industrial .absolute.top-0.left-0.z-10 p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f4f6f3;
+  letter-spacing: 0.03em;
+}
+
+.auth-industrial .absolute.top-0.left-0.z-10 img {
+  width: 34px;
+  height: 34px;
+}
+
+/* Utility toolbar top-right */
+.auth-industrial > div > .absolute.top-4.right-2 {
+  padding: 3px 5px;
+  background: var(--ind-surface-alt);
+  border: 1px solid var(--ind-border);
+  border-radius: var(--ind-radius);
+  box-shadow: none;
+}
+
+.auth-industrial > div > .absolute.top-4.right-2 .vben-icon-button,
+.auth-industrial > div > .absolute.top-4.right-2 button {
+  color: var(--ind-text-muted);
+  border-radius: var(--ind-radius);
+}
+
+.auth-industrial > div > .absolute.top-4.right-2 .vben-icon-button:hover,
+.auth-industrial > div > .absolute.top-4.right-2 button:hover {
+  color: var(--ind-green-strong);
+  background: var(--ind-green-soft);
+}
+
+/* Right-hand credential panel */
+.auth-industrial div:has(> .side-content[data-side='right']) {
+  position: relative;
+  background: var(--ind-surface);
+  border-left: 4px solid var(--ind-green);
+  box-shadow: none;
+}
+
+.auth-industrial div:has(> .side-content[data-side='right'])::before {
+  position: absolute;
+  top: 22px;
+  left: 32px;
+  font-family: 'Roboto Mono', SFMono-Regular, consolas, monospace;
+  font-size: 9px;
+  color: var(--ind-text-muted);
+  letter-spacing: 0.16em;
+  content: 'SECURE ACCESS // AUTHORIZED PERSONNEL';
+}
+
+.auth-industrial .side-content {
+  width: 100%;
+  max-width: 390px;
+  margin-top: 42px !important;
+}
+
+.auth-industrial .side-content h2 {
+  position: relative;
+  padding-top: 18px;
+  margin-bottom: 8px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ind-text);
+  letter-spacing: -0.01em;
+}
+
+.auth-industrial .side-content h2::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  content: '';
+  background: var(--ind-green);
+}
+
+.auth-industrial .side-content h2 + p,
+.auth-industrial .side-content .text-muted-foreground {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ind-text-muted) !important;
+}
+
+.auth-industrial .side-content [data-slot='card'] {
+  border: 0;
+}
+
+.auth-industrial .side-content .ant-form-item {
+  margin-bottom: 13px;
+}
+
+.auth-industrial .side-content .ant-input,
+.auth-industrial .side-content .ant-input-affix-wrapper,
+.auth-industrial .side-content .ant-select-selector {
+  min-height: 38px !important;
+  font-size: 13px;
+  background: var(--ind-surface-alt) !important;
+  border-color: var(--ind-border-strong) !important;
+  border-radius: var(--ind-radius) !important;
+}
+
+.auth-industrial .side-content .ant-input-affix-wrapper input {
+  min-height: 36px;
+}
+
+.auth-industrial .side-content .ant-input:focus,
+.auth-industrial .side-content .ant-input-affix-wrapper-focused,
+.auth-industrial .side-content .ant-select-focused .ant-select-selector {
+  background: var(--ind-surface) !important;
+  border-color: var(--ind-green) !important;
+  box-shadow: 0 0 0 2px rgb(72 146 87 / 14%) !important;
+}
+
+.auth-industrial .side-content .ant-form-item-explain-error {
+  font-size: 11px;
+}
+
+.auth-industrial .side-content button {
+  border-radius: var(--ind-radius);
+}
+
+.auth-industrial .side-content button[type='button'],
+.auth-industrial .side-content .w-full {
+  letter-spacing: 0.02em;
+}
+
+.auth-industrial .side-content button.w-full {
+  height: 38px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.auth-industrial .side-content .vben-link {
+  color: var(--ind-green-strong);
+}
+
+.auth-industrial .side-content .vben-link:hover {
+  color: var(--ind-green-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.auth-industrial .side-content .mt-4.mb-2 button {
+  height: 32px;
+  font-size: 12px;
+  color: var(--ind-text-muted);
+  background: var(--ind-surface);
+  border-color: var(--ind-border-strong);
+  box-shadow: none;
+}
+
+.auth-industrial .side-content .mt-4.mb-2 button:hover {
+  color: var(--ind-green-strong);
+  background: var(--ind-green-tint);
+  border-color: var(--ind-green);
+}
+
+.auth-industrial .side-content .mb-6 {
+  margin-bottom: 18px !important;
+}
+
+.auth-industrial .side-content [type='checkbox'] {
+  border-radius: 1px;
+}
+
+.auth-industrial .side-content .text-sm {
+  font-size: 12px;
+}
+
+.auth-industrial .side-content > div > .mt-3 {
+  padding-top: 12px;
+  margin-top: 18px !important;
+  font-size: 12px;
+  color: var(--ind-text-muted);
+  border-top: 1px solid var(--ind-border);
+}
+
+/* Third-party login row */
+.auth-industrial .side-content .mt-6.flex-center,
+.auth-industrial .side-content .flex-center.mt-4 {
+  gap: 10px;
+}
+
+.auth-industrial .side-content .mt-6.flex-center button,
+.auth-industrial .side-content .flex-center.mt-4 button {
+  width: 36px;
+  height: 36px;
+  color: var(--ind-text-muted);
+  background: var(--ind-surface);
+  border: 1px solid var(--ind-border);
+  border-radius: var(--ind-radius);
+}
+
+.auth-industrial .side-content .mt-6.flex-center button:hover,
+.auth-industrial .side-content .flex-center.mt-4 button:hover {
+  color: var(--ind-green-strong);
+  border-color: var(--ind-green);
+}
+
+/* Copyright strip */
+.auth-industrial .text-muted-foreground {
+  color: var(--ind-text-muted);
+}
+
+.auth-industrial div:has(> .side-content[data-side='right']) .absolute.bottom-3 {
+  font-family: 'Roboto Mono', SFMono-Regular, consolas, monospace;
+  font-size: 9px;
+  color: var(--ind-text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* Mobile / tablet: hide the blueprint panel, keep a clean light access card. */
+@media (max-width: 1023px) {
+  .auth-industrial .absolute.top-0.left-0.z-10 p {
+    color: var(--ind-text);
+  }
+
+  .auth-industrial div:has(> .side-content[data-side='right']) {
+    border-top: 3px solid var(--ind-green);
+    border-left-width: 0;
+  }
+}
+
+/* Dark mode keeps the blueprint panel but reduces the white flash. */
+.dark .auth-industrial {
+  background: #0c0f0c;
+}
+
+.dark .auth-industrial .login-background::after {
+  color: rgb(255 255 255 / 30%);
+}

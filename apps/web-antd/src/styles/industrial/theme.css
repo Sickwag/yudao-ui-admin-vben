@@ -1,0 +1,205 @@
+/**
+ * Industrial control-console theme
+ *
+ * FortiGate-style visual language:
+ * - dark equipment rail on the left
+ * - deep green command bar on top
+ * - white, high-density working surface
+ * - square corners, hairline borders, restrained status colours
+ *
+ * The palette is exposed through variables so the Ant Design theme hook can
+ * keep reading the same values as before.
+ */
+:root {
+  --ind-green: #489257;
+  --ind-green-hover: #3f7f4b;
+  --ind-green-strong: #2f6e3f;
+  --ind-green-deep: #24552f;
+  --ind-green-soft: #e9f2eb;
+  --ind-green-tint: #f2f7f3;
+  --ind-header-bg: #489257;
+  --ind-header-border: #3a7a46;
+  --ind-sidebar-bg: #3d3d3d;
+  --ind-sidebar-deep: #323232;
+  --ind-sidebar-line: #4b4b4b;
+  --ind-content-bg: #f2f3f1;
+  --ind-surface: #fff;
+  --ind-surface-alt: #f7f8f6;
+  --ind-surface-sunken: #eef1ed;
+  --ind-border: #d9dcd8;
+  --ind-border-strong: #c7ccc5;
+  --ind-text: #33372f;
+  --ind-text-muted: #6b7169;
+  --ind-orange: #ef8a00;
+  --ind-orange-soft: #fff4df;
+  --ind-blue: #2e6f9e;
+  --ind-blue-soft: #eaf3f9;
+  --ind-red: #d6453a;
+  --ind-red-soft: #fceceb;
+  --ind-radius: 2px;
+  --ind-header-height: 48px;
+  --ind-shadow-popup: 0 4px 16px rgb(21 31 23 / 12%);
+  --font-family:
+    'Roboto', 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei',
+    'Helvetica Neue', arial, sans-serif;
+
+  /* Vben layout tokens */
+  --background: 0 0% 100%;
+  --background-deep: 120 7% 95%;
+  --foreground: 120 4% 19%;
+  --card: 0 0% 100%;
+  --card-foreground: 120 4% 19%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 120 4% 19%;
+  --primary: 132 34% 43%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 120 6% 94%;
+  --secondary-foreground: 120 4% 19%;
+  --muted: 120 5% 95%;
+  --muted-foreground: 120 3% 42%;
+  --accent: 120 8% 94%;
+  --accent-dark: 120 6% 90%;
+  --accent-darker: 120 5% 86%;
+  --accent-lighter: 120 10% 98%;
+  --accent-hover: 120 6% 89%;
+  --accent-foreground: 120 4% 16%;
+  --heavy: 120 4% 83%;
+  --heavy-foreground: 120 4% 16%;
+  --success: 132 40% 38%;
+  --success-foreground: 0 0% 100%;
+  --warning: 35 100% 47%;
+  --warning-foreground: 0 0% 100%;
+  --destructive: 5 65% 52%;
+  --destructive-foreground: 0 0% 100%;
+  --info: 201 54% 40%;
+  --info-foreground: 0 0% 100%;
+  --border: 120 4% 85%;
+  --input: 120 4% 80%;
+  --input-placeholder: 120 3% 52%;
+  --input-background: 0 0% 100%;
+  --ring: 132 34% 43%;
+  --overlay: 0 0% 0% / 48%;
+  --overlay-content: 0 0% 8% / 56%;
+  --radius: 0.125rem;
+  --font-size-base: 13px;
+  --menu-font-size: 13px;
+  --sidebar: 0 0% 24%;
+  --sidebar-deep: 0 0% 20%;
+  --menu: var(--sidebar);
+  --header: 132 34% 43%;
+
+  color-scheme: light;
+}
+
+.dark {
+  --ind-green: #5aa66b;
+  --ind-green-hover: #6bb57b;
+  --ind-green-strong: #4b9a60;
+  --ind-green-deep: #3c7d4c;
+  --ind-green-soft: #1d3323;
+  --ind-green-tint: #18281d;
+  --ind-header-bg: #2d5d37;
+  --ind-header-border: #1f4629;
+  --ind-sidebar-bg: #171917;
+  --ind-sidebar-deep: #111311;
+  --ind-sidebar-line: #2b2f2b;
+  --ind-content-bg: #0f1210;
+  --ind-surface: #171a17;
+  --ind-surface-alt: #1b1f1b;
+  --ind-surface-sunken: #121512;
+  --ind-border: #2d332d;
+  --ind-border-strong: #3b433b;
+  --ind-text: #e7ebe6;
+  --ind-text-muted: #98a098;
+  --ind-orange: #f2a12b;
+  --ind-orange-soft: #362817;
+  --ind-blue: #69a7cf;
+  --ind-blue-soft: #172a36;
+  --ind-red: #e36a60;
+  --ind-red-soft: #351b19;
+  --ind-shadow-popup: 0 6px 22px rgb(0 0 0 / 45%);
+  --background: 140 5% 9%;
+  --background-deep: 140 6% 7%;
+  --foreground: 120 4% 89%;
+  --card: 140 5% 11%;
+  --card-foreground: 120 4% 92%;
+  --popover: 140 5% 13%;
+  --popover-foreground: 120 4% 92%;
+  --secondary: 140 4% 16%;
+  --secondary-foreground: 120 4% 92%;
+  --muted: 140 4% 14%;
+  --muted-foreground: 120 4% 62%;
+  --accent: 140 4% 16%;
+  --accent-dark: 140 4% 20%;
+  --accent-darker: 140 4% 24%;
+  --accent-lighter: 140 4% 12%;
+  --accent-hover: 140 4% 21%;
+  --accent-foreground: 120 4% 94%;
+  --heavy: 140 4% 24%;
+  --heavy-foreground: 120 4% 92%;
+  --border: 140 4% 20%;
+  --input: 140 4% 24%;
+  --input-background: 140 4% 12%;
+  --input-placeholder: 120 4% 50%;
+  --sidebar: 0 0% 8%;
+  --sidebar-deep: 0 0% 5%;
+  --menu: var(--sidebar);
+  --header: 132 35% 27%;
+  --overlay: 0 0% 0% / 62%;
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: hsl(var(--background-deep));
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-height: 100%;
+}
+
+::selection {
+  color: #fff;
+  background: var(--ind-green);
+}
+
+* {
+  scrollbar-color: var(--ind-border-strong) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ind-border-strong);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ind-text-muted);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ind-green);
+  outline-offset: 1px;
+}
